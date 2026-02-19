@@ -29,8 +29,8 @@ export async function POST(request: Request) {
 
     // Contenu de l'email
     const mailOptions = {
-      from: `"Agency Binary - Formulaire Contact" <${process.env.GMAIL_USER}>`, // Envoyé depuis contact@agencybinary.fr
-      to: process.env.GMAIL_USER, // Reçu sur contact@agencybinary.fr
+      from: `"Agency Binary - Formulaire Contact" <${process.env.GMAIL_USER}>`, // Envoyé depuis Gmail
+      to: 'contact@agencybinary.fr', // Reçu sur contact@agencybinary.fr
       replyTo: email, // Répondre directement au client
       subject: `Nouveau message de ${name}${company ? ` (${company})` : ''}`,
       html: `
