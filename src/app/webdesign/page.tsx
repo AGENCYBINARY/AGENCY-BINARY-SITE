@@ -22,7 +22,7 @@ export default function WebDesign() {
             </h2>
           </div>
 
-          {/* Section: Ce que nous faisons */
+          {/* Section: Ce que nous faisons */}
           <section className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-indigo-500 pb-4">
               Ce que nous faisons
@@ -66,7 +66,7 @@ export default function WebDesign() {
             </div>
           </section>
 
-          {/* Section: Ce que ça change */
+          {/* Section: Ce que ça change */}
           <section className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-purple-500 pb-4">
               Ce que ça change

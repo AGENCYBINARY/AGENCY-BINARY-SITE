@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Clé API sécurisée côté serveur
-    const apiKey = process.env.OPENAI_API_KEY || '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';
+    const apiKey = process.env.OPENAI_API_KEY;
 
     // Appel à OpenAI
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
