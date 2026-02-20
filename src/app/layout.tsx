@@ -6,8 +6,11 @@ const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'AGENCY BINARY - Agents IA & Web Design',
+  title: 'AGENCY BINARY',
   description: 'AGENCY BINARY - Agence digitale créant des agents IA virtuels et des sites internet personnalisés modernes et performants',
+  icons: {
+    icon: '/icon.png', // Assure-toi que ce nom correspond à ton fichier
+  }
 }
 
 export default function RootLayout({

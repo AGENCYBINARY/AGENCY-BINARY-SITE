@@ -18,12 +18,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Configuration du transporteur SMTP Gmail
+    // Configuration du transporteur SMTP Gmail optimisée pour Vercel
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // Utilise SSL pour le port 465
       auth: {
-        user: process.env.GMAIL_USER, // contact@agencybinary.fr
-        pass: process.env.GMAIL_APP_PASSWORD, // Mot de passe d'application Gmail
+        user: process.env.GMAIL_USER, 
+        pass: process.env.GMAIL_APP_PASSWORD, 
       },
     });
 
