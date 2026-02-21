@@ -93,7 +93,6 @@ export default function Contact() {
                   <h4 className="font-semibold text-gray-900">Téléphone</h4>
                   <p className="text-gray-600">07 72 04 02 70</p>
                   <p className="text-gray-600">06 80 85 17 68</p>
-                  <p className="text-gray-500 text-sm italic mt-1">Disponible week-ends uniquement</p>
                 </div>
               </div>
 

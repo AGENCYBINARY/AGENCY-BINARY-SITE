@@ -81,8 +81,8 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-900">Contact</h3>
             <ul className="space-y-2 text-gray-700">
-              <li>07 72 04 02 70 <span className="text-gray-600 text-sm">(week-ends)</span></li>
-              <li>06 80 85 17 68 <span className="text-gray-600 text-sm">(week-ends)</span></li>
+              <li>07 72 04 02 70</li>
+              <li>06 80 85 17 68</li>
               <li>contact@agencybinary.fr</li>
             </ul>
           </div>
