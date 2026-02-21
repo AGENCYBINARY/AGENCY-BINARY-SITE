@@ -53,9 +53,9 @@ export default function MentionsLegales() {
               3. Hébergement du site
             </h2>
             <div className="text-gray-700 space-y-2">
-              <p><strong className="text-gray-900">Hébergeur :</strong> Squarespace</p>
-              <p><strong className="text-gray-900">Adresse :</strong> [À compléter - Adresse de l'hébergeur]</p>
-              <p><strong className="text-gray-900">Téléphone :</strong> [À compléter - Téléphone de l'hébergeur]</p>
+              <p><strong className="text-gray-900">Hébergeur :</strong> Vercel Inc.</p>
+              <p><strong className="text-gray-900">Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.</p>
+              <p><strong className="text-gray-900">Site web :</strong> <Link href="https://vercel.com" className="text-indigo-600 hover:text-indigo-700" target="_blank">https://vercel.com</Link></p>
             </div>
           </section>
 

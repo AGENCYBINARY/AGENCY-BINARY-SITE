@@ -111,7 +111,7 @@ export default function PolitiqueConfidentialite() {
               <p>Vos données personnelles sont destinées à :</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong className="text-gray-900">L'équipe AGENCY BINARY</strong> - Pour traiter vos demandes</li>
-                <li><strong className="text-gray-900">Hébergeur web</strong> - Squarespace pour l'hébergement sécurisé</li>
+                <li><strong className="text-gray-900">Hébergeur web</strong> - Vercel Inc</li>
                 <li><strong className="text-gray-900">Service email</strong> - Pour l'envoi et la réception des messages</li>
               </ul>
               <p className="mt-4">
