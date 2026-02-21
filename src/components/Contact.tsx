@@ -36,7 +36,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus({
           type: 'success',
-          message: 'Message envoyé avec succès ! Nous vous répondrons rapidement.',
+          message: 'Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.',
         });
         // Réinitialiser le formulaire
         (e.target as HTMLFormElement).reset();
