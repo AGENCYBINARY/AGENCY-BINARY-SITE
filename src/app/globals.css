@@ -307,9 +307,14 @@ html {
   width: clamp(220px, 26vw, 420px);
   aspect-ratio: 1 / 1;
   border-radius: 45% 55% 58% 42% / 42% 36% 64% 58%;
+  -webkit-filter: blur(90px);
   filter: blur(90px);
   opacity: 0.65;
   mix-blend-mode: screen;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   animation:
     ambientBlobFloat 6s cubic-bezier(0.55, 0.08, 0.42, 0.95) infinite,
     ambientBlobMorph 4.2s ease-in-out infinite alternate;
