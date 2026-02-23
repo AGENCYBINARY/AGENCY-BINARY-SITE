@@ -14,8 +14,8 @@ export default function Portfolio() {
 
   return (
     <section id="offres" className="py-20 bg-gradient-to-b from-white to-gray-50 relative">
-      <div className="absolute inset-0 bg-gradient-to-l from-purple-50/10 to-blue-50/10"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="absolute inset-0 bg-gradient-to-l from-purple-50/10 to-blue-50/10 -z-10 pointer-events-none" aria-hidden="true"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative isolate">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
             Nos Offres SaaS IA
@@ -134,7 +134,10 @@ export default function Portfolio() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Offre Or</h3>
               <div className="mb-8">
                 <div className="text-4xl font-bold text-gray-600 mb-2">
-                  <span className="text-5xl bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">{withCommitment ? '199€' : '229€'}</span>
+                  <span
+                    className="relative z-50 text-5xl bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text safe-bg-clip-text"
+                    style={{ color: '#1e3a8a' }}
+                  >{withCommitment ? '199€' : '229€'}</span>
                   <span className="text-xl">/mois HT</span>
                 </div>
                 <div className="inline-block bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -191,7 +194,7 @@ export default function Portfolio() {
           
           {activeTab === 'enterprise' && (
             <div className="text-center relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-100/10 via-gray-100/10 to-purple-100/10 rounded-2xl blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-100/10 via-gray-100/10 to-purple-100/10 rounded-2xl blur-xl -z-10 pointer-events-none" aria-hidden="true"></div>
               <div className="relative bg-gradient-to-br from-white via-white to-gray-50 border-2 border-purple-200 rounded-2xl p-8 backdrop-blur-md">
                 
                 <div className="absolute top-6 right-6 flex items-center gap-3 z-10">
@@ -216,7 +219,10 @@ export default function Portfolio() {
                 
                 <div className="mb-8">
                   <div className="text-4xl font-bold text-gray-600 mb-2">
-                    <span className="text-5xl bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg">{withCommitment ? '399€' : '429€'}</span>
+                    <span
+                      className="relative z-50 text-5xl bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text safe-bg-clip-text drop-shadow-lg"
+                      style={{ color: '#4c1d95' }}
+                    >{withCommitment ? '399€' : '429€'}</span>
                     <span className="text-xl text-gray-900">/mois HT</span>
                   </div>
                   <div className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg shadow-purple-500/25">
@@ -318,7 +324,7 @@ export default function Portfolio() {
                       </th>
                       <th className="text-center py-4 px-4">
                         <div className="text-gray-900 font-semibold">Or</div>
-                        <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent mt-1">{withCommitment ? '199€' : '229€'}</div>
+                        <div className="relative z-50 text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text safe-bg-clip-text mt-1" style={{ color: '#1e3a8a' }}>{withCommitment ? '199€' : '229€'}</div>
                         <div className="text-sm text-gray-600">/mois HT</div>
                         <div className="inline-block bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-1">
                           Recommandé
@@ -326,7 +332,7 @@ export default function Portfolio() {
                       </th>
                       <th className="text-center py-4 px-4">
                         <div className="text-gray-900 font-semibold">Platine</div>
-                        <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent mt-1">{withCommitment ? '399€' : '429€'}</div>
+                        <div className="relative z-50 text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text safe-bg-clip-text mt-1" style={{ color: '#4c1d95' }}>{withCommitment ? '399€' : '429€'}</div>
                         <div className="text-sm text-gray-600">/mois HT</div>
                         <div className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-1">
                           Premium

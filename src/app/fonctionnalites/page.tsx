@@ -199,7 +199,7 @@ export default function Fonctionnalites() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text safe-bg-clip-text" style={{ color: '#4f46e5' }}>
               Fonctionnalités détaillées
             </span>
           </h1>

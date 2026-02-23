@@ -124,7 +124,7 @@ export default function Offres() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Offre Or</h3>
               <div className="mb-8">
                 <div className="text-4xl font-bold text-gray-600 mb-2">
-                  <span className="text-5xl bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">199€</span>
+                  <span className="relative z-50 text-5xl bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text safe-bg-clip-text" style={{ color: '#1e3a8a' }}>199€</span>
                   <span className="text-xl">/mois HT</span>
                 </div>
                 <div className="inline-block bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -191,7 +191,7 @@ export default function Offres() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Offre Platine</h3>
               <div className="mb-8">
                 <div className="text-4xl font-bold text-gray-600 mb-2">
-                  <span className="text-5xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">399€</span>
+                  <span className="relative z-50 text-5xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text safe-bg-clip-text" style={{ color: '#4c1d95' }}>399€</span>
                   <span className="text-xl">/mois HT</span>
                 </div>
                 <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -385,7 +385,7 @@ export default function Offres() {
               {selectedOffer === 'or' && (
                 <div className="space-y-6">
                   <div className="text-4xl font-bold mb-4">
-                    <span className="bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">199€</span>
+                    <span className="relative z-50 bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text safe-bg-clip-text" style={{ color: '#1e3a8a' }}>199€</span>
                     <span className="text-xl text-gray-600">/mois HT</span>
                   </div>
                   <div className="inline-block bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">
@@ -489,7 +489,7 @@ export default function Offres() {
               {selectedOffer === 'platine' && (
                 <div className="space-y-6">
                   <div className="text-4xl font-bold mb-4">
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">399€</span>
+                    <span className="relative z-50 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text safe-bg-clip-text" style={{ color: '#4c1d95' }}>399€</span>
                     <span className="text-xl text-gray-600">/mois HT</span>
                   </div>
                   <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4">

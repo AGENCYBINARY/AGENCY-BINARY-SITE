@@ -119,7 +119,7 @@ export default function CreationSites() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Web Design
-            <span className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text safe-bg-clip-text" style={{ color: '#9f7aea' }}>
               Personnalisés
             </span>
           </h1>

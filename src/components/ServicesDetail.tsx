@@ -154,8 +154,8 @@ export default function ServicesDetail() {
             {/* Header */}
             <div className="sticky top-0 bg-white/5 backdrop-blur-xl flex justify-between items-center p-6 border-b border-white/20 rounded-t-2xl z-10">
               <div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                  Fonctionnalités détaillées
+                <h2 className="text-3xl font-bold">
+                  <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text safe-bg-clip-text" style={{ color: '#6366f1' }}>Fonctionnalités détaillées</span>
                 </h2>
                 <p className="text-gray-400 mt-1">Découvrez tout ce que nos agents IA peuvent faire pour vous</p>
               </div>

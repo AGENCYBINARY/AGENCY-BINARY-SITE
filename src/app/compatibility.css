@@ -215,3 +215,13 @@ body {
   will-change: auto;
   -webkit-will-change: auto;
 }
+
+/* Apply background-clip:text only when supported, keep readable fallback otherwise */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .safe-bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
