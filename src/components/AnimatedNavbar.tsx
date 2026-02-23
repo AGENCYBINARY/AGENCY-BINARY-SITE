@@ -1,12 +1,27 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function AnimatedNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const pathname = usePathname()
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // If we're already on the homepage, scroll to #hero instead of navigating
+    if (pathname === '/' || pathname === '') {
+      e.preventDefault()
+      const el = document.getElementById('hero')
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,18 +45,19 @@ export default function AnimatedNavbar() {
   return (
     <>
       {/* MOBILE Navbar - Rectangle plat collé en haut SANS animation */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 w-full z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl border-b border-gray-300/30 animate-slide-down">
+      <nav className="md:hidden fixed top-0 left-0 right-0 w-full z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl border-b border-gray-300/30 animate-slide-down will-change-transform">
         <div className="px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center hover:scale-110 transition-transform duration-300">
+              <Link href="/" onClick={handleLogoClick} aria-label="Accueil" className="flex items-center hover:scale-110 transition-transform duration-300 will-change-transform">
                 <span className="text-2xl font-black text-gray-900">AGENCY BINARY</span>
               </Link>
             </div>
             
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-primary-600 focus:outline-none drop-shadow-sm"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-primary-600 focus:outline-none drop-shadow-sm transition-colors duration-300"
+              aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -51,7 +67,7 @@ export default function AnimatedNavbar() {
         </div>
 
         {isOpen && (
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 animate-slide-down">
             <Link href="/#hero" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
               Accueil
             </Link>
@@ -70,10 +86,12 @@ export default function AnimatedNavbar() {
 
       {/* DESKTOP Navbar - Avec animation au scroll */}
       <nav 
-        className="hidden md:block bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30 fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-out"
+        className="hidden md:block bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30 fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-out will-change-auto"
         style={{
           width: `${navWidth}%`,
-          maxWidth: `${maxWidth}rem`
+          maxWidth: `${maxWidth}rem`,
+          WebkitTransform: `translate(-50%, 0)`,
+          transform: `translate(-50%, 0)`
         }}
       >
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,15 +102,16 @@ export default function AnimatedNavbar() {
           >
             {/* Logo - Apparaît lors du scroll */}
             <div 
-              className="flex-shrink-0 transition-all duration-500"
+              className="flex-shrink-0 transition-all duration-500 will-change-transform"
               style={{
                 opacity: logoOpacity,
+                WebkitTransform: `scale(${logoScale})`,
                 transform: `scale(${logoScale})`,
                 marginRight: logoOpacity > 0 ? '1rem' : '0',
                 display: logoOpacity > 0.1 ? 'block' : 'none'
               }}
             >
-              <Link href="/" className="flex items-center">
+              <Link href="/" onClick={handleLogoClick} aria-label="Accueil" className="flex items-center">
                 <Image
                   src="/images/logo.png"
                   alt="AGENCY BINARY"

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
+import './compatibility.css'
+import BrowserCompatInit from '@/components/BrowserCompatInit'
 
 const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['700', '800'] })
@@ -37,7 +39,10 @@ export default function RootLayout({
         />
         <script src="/widget.js" defer />
       </head>
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>
+        <BrowserCompatInit />
+        {children}
+      </body>
     </html>
   )
 }

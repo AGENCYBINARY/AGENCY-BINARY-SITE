@@ -1,0 +1,217 @@
+/**
+ * Cross-Browser Compatibility Fallbacks
+ * Applique les styles appropriés basés sur la détection du navigateur
+ */
+
+/* Classes de détection de support */
+
+/* Quand le backdrop-filter n'est pas supporté */
+.no-backdrop-filter .backdrop-blur-md,
+.no-backdrop-filter .backdrop-blur-xl {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.no-backdrop-filter .bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.no-backdrop-filter .bg-gray-200\/30 {
+  background-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+/* Quand les 3D transforms ne sont pas supportés */
+.no-3d-transforms .animate-fade-in,
+.no-3d-transforms .animate-slide-up,
+.no-3d-transforms .animate-slide-down,
+.no-3d-transforms .animate-slide-in-left,
+.no-3d-transforms .animate-slide-in-right {
+  will-change: opacity !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+.no-3d-transforms #ambient-bg .blob {
+  animation-name: ambientBlobFloatFallback !important;
+}
+
+@keyframes ambientBlobFloatFallback {
+  0% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+
+/* Quand mix-blend-mode n'est pas supporté */
+.no-mix-blend-mode #ambient-bg .blob {
+  mix-blend-mode: normal !important;
+  opacity: 0.3 !important;
+}
+
+/* Optimisations pour macOS */
+.is-macos {
+  /* Activé font smoothing sur macOS */
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+.is-macos * {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Safari-specific fixes */
+.is-safari input,
+.is-safari textarea,
+.is-safari select,
+.is-safari button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: inherit;
+}
+
+.is-safari input:focus,
+.is-safari textarea:focus,
+.is-safari select:focus {
+  outline-offset: 0;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Disable zoom on input focus */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  body {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  /* Améliorer les animations sur iOS */
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-down,
+  .animate-slide-in-left,
+  .animate-slide-in-right {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Réductions des animations si l'utilisateur préfère */
+.prefers-reduced-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Optimiser les transitions sur tous les navigateurs */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fixes pour les box-shadow sur différents navigateurs */
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+  -webkit-filter: drop-shadow(0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 10px 15px -3px rgba(0, 0, 0, 0.1));
+}
+
+/* Améliorer la performance des gradients */
+.bg-gradient-to-b,
+.bg-gradient-to-r,
+.bg-gradient-to-br,
+.bg-gradient-to-l {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* Fix pour les border-radius sur Safari */
+button,
+a,
+div {
+  -webkit-touch-callout: default;
+}
+
+/* Fix pour les pseudo-éléments sur mobile */
+@media (max-width: 768px) {
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /* Désactiver les hover sur les appareils tactiles */
+  @media (hover: none) {
+    /* Les hover ne s'appliquent pas sur mobile */
+  }
+}
+
+/* Améliorer la lisibilité du texte */
+body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prévenir les flashs de contenu */
+.page-transition {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* Indiquer les éléments focusables pour l'accessibilité */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Améliorer la performance des animations GPU */
+.will-change-transform {
+  will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Désactiver les will-change par défaut pour éviter les fuites mémoire */
+* {
+  will-change: auto;
+}
+
+/* Activer les will-change uniquement quand nécessaire */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-down,
+.animate-float {
+  will-change: opacity, transform;
+}
+
+#ambient-bg .blob {
+  will-change: auto;
+  -webkit-will-change: auto;
+}

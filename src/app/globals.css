@@ -311,14 +311,19 @@ html {
   filter: blur(90px);
   opacity: 0.65;
   mix-blend-mode: screen;
+  -webkit-mix-blend-mode: screen;
   -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-animation:
+    ambientBlobFloat 6s cubic-bezier(0.55, 0.08, 0.42, 0.95) infinite,
+    ambientBlobMorph 4.2s ease-in-out infinite alternate;
   animation:
     ambientBlobFloat 6s cubic-bezier(0.55, 0.08, 0.42, 0.95) infinite,
     ambientBlobMorph 4.2s ease-in-out infinite alternate;
-  will-change: transform, opacity;
+  will-change: auto;
   pointer-events: none;
 }
 
@@ -328,4 +333,182 @@ html {
 
 .icon-inflate:hover {
   animation: iconInflate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========== CROSS-BROWSER COMPATIBILITY ========== */
+
+/* Backdrop-filter avec fallbacks */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-md,
+  .backdrop-blur-xl {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* Classes de fallback personnalisées pour iOS et navigateurs anciens */
+.backdrop-blur-custom {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.75);
+  background-image: 
+    -webkit-linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+}
+
+/* Fallback pour Safari iOS sur les anciens modèles */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  .backdrop-blur-md-ios,
+  .backdrop-blur-xl-ios {
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Animations fluides sur tous les navigateurs */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes float {
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@-webkit-keyframes scaleIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes bounceGentle {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+/* Optimisation des animations pour éviter jank */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Support pour box-shadow sur iOS */
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Amélioration de la performance des transitions */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fallback pour les utilisateurs sans support animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Amélioration des transform pour performance */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-down,
+.animate-slide-in-left,
+.animate-slide-in-right,
+.animate-float,
+.animate-scale-in,
+.animate-bounce-gentle {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }

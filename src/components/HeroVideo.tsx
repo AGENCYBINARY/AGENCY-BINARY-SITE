@@ -30,8 +30,11 @@ export default function HeroVideo() {
       if (isInView && currentProgress < maxProgress) {
         e.preventDefault()
 
+        // Détection du trackpad pour adapté la sensibilité
+        const isTrackpad = e.deltaY % 1 !== 0
+        const scrollSensitivity = isTrackpad ? 0.005 : 0.01
         // Update progress based on wheel delta - smaller increment for smoother control
-        const delta = e.deltaY > 0 ? 0.01 : -0.01
+        const delta = (e.deltaY > 0 ? 1 : -1) * scrollSensitivity
         currentProgress = Math.max(0, Math.min(currentProgress + delta, maxProgress))
         
         setScrollProgress(currentProgress)
@@ -117,7 +120,7 @@ export default function HeroVideo() {
 
     window.addEventListener('wheel', handleWheelStart)
     window.addEventListener('wheel', handleWheelEnd)
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
       window.removeEventListener('wheel', handleWheelStart)

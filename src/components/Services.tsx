@@ -22,7 +22,7 @@ export default function Services() {
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/40 to-purple-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-indigo-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20" style={{boxShadow: '0 20px 40px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-indigo-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Gain de Temps</h3>
               <p className="text-gray-600 mb-6">
                 Traitement automatisé des demandes pour libérer votre équipe des tâches répétitives
@@ -59,7 +59,7 @@ export default function Services() {
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-pink-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-purple-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" style={{boxShadow: '0 20px 40px rgba(168, 85, 247, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-purple-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(168, 85, 247, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Assistant IA</h3>
               <p className="text-gray-600 mb-6">
                 Assistant métier et administratif interne pour simplifier votre quotidien
@@ -96,7 +96,7 @@ export default function Services() {
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 to-rose-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-pink-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20" style={{boxShadow: '0 20px 40px rgba(236, 72, 153, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-8 hover:border-pink-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(236, 72, 153, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">WebDesign</h3>
               <p className="text-gray-600 mb-6">
                 Interfaces connectées au système pour une expérience utilisateur optimale

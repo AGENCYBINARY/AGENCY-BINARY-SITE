@@ -46,9 +46,14 @@ export default function HeroInteractive() {
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      // Détection du trackpad/scroll wheel pour éviter preventDefault excessif
+      const isTrackpad = e.deltaY % 1 !== 0 || Math.abs(e.deltaY) > Math.abs(e.deltaX)
+      
       if (!isAnimationComplete) {
         e.preventDefault()
-        wheelAccumulatorRef.current += e.deltaY
+        // Adapter la vitesse de scroll pour trackpad
+        const delta = isTrackpad ? e.deltaY * 0.5 : e.deltaY
+        wheelAccumulatorRef.current += delta
 
         const progress = Math.max(0, Math.min(wheelAccumulatorRef.current / 1500, 1))
         setAnimationProgress(progress)
@@ -59,7 +64,8 @@ export default function HeroInteractive() {
         }
       } else if (animationProgress > 0 && animationProgress < 1) {
         e.preventDefault()
-        wheelAccumulatorRef.current += e.deltaY
+        const delta = isTrackpad ? e.deltaY * 0.5 : e.deltaY
+        wheelAccumulatorRef.current += delta
         const progress = Math.max(0, Math.min(wheelAccumulatorRef.current / 1500, 1))
         setAnimationProgress(progress)
       }
