@@ -58,7 +58,7 @@ export default function WebDesign() {
 
               {/* Intégration Agent IA */}
               <div className="border-l-4 border-indigo-500 pl-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Intégration Native d'Agent IA</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Intégration d'Agent IA</h3>
                 <p className="text-gray-700">
                   Transformez votre vitrine en un outil de performance avec l’intégration directe de notre Agent IA, un collaborateur digital entraîné sur vos données pour automatiser votre service client et votre gestion administrative 24h/24.
                 </p>
