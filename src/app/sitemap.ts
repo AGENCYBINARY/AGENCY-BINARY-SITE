@@ -14,22 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/webdesign`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/assistant-ia`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/creation-sites`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fonctionnalites`,
+      url: `${baseUrl}/assistant-ia`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -44,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/cgv`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.5,
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/mentions-legales`,

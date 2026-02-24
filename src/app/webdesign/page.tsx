@@ -95,6 +95,63 @@ export default function WebDesign() {
             </div>
           </section>
 
+          {/* Section: Notre Processus de Création */}
+          <section className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 border-b-4 border-indigo-500 pb-4">
+              Notre Processus de Création
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Step 1 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  1
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Consultation</h3>
+                <p className="text-gray-700">Écoute de vos besoins, objectifs et contraintes pour définir la stratégie</p>
+              </div>
+              {/* Step 2 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  2
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Conception</h3>
+                <p className="text-gray-700">Création de prototypes et mockups pour validation de votre vision</p>
+              </div>
+              {/* Step 3 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  3
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Développement</h3>
+                <p className="text-gray-700">Développement du site avec les meilleures pratiques web modernes</p>
+              </div>
+              {/* Step 4 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  4
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Tests</h3>
+                <p className="text-gray-700">Tests complets (compatibilité, performance, sécurité, accessibilité)</p>
+              </div>
+              {/* Step 5 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  5
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Déploiement</h3>
+                <p className="text-gray-700">Mise en ligne avec configuration DNS et SSL sécurisé</p>
+              </div>
+              {/* Step 6 */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  6
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Accompagnement</h3>
+                <p className="text-gray-700">Formation et support continu pour la gestion de votre site</p>
+              </div>
+            </div>
+          </section>
+
           {/* Section: Équivalent fonctionnel */}
           <section className="bg-gradient-to-br from-purple-900 to-indigo-900 rounded-3xl shadow-2xl p-8 md:p-12 mb-12 text-white">
             <h2 className="text-3xl font-bold mb-6 border-b-4 border-purple-400 pb-4">
