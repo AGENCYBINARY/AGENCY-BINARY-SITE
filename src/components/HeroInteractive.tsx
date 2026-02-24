@@ -11,31 +11,40 @@ export default function HeroInteractive() {
   useEffect(() => {
     const colors = ['#001657', '#002688', '#0135A7', '#0F40C5', '#3E66F0']
     const ambientContainer = document.getElementById('ambient-bg')
-    if (!ambientContainer) return
+    const ambientContainerMobile = document.getElementById('ambient-bg-mobile')
+    
+    const containers = []
+    if (ambientContainer) containers.push(ambientContainer)
+    if (ambientContainerMobile) containers.push(ambientContainerMobile)
+    
+    if (containers.length === 0) return
 
-    const blobs: HTMLDivElement[] = []
-    colors.forEach((color, index) => {
-      const blob = document.createElement('div')
-      blob.className = 'blob'
-      blob.style.background = color
-      blob.style.top = Math.random() * 100 + '%'
-      blob.style.left = Math.random() * 100 + '%'
-      blob.style.animationDuration = 5 + Math.random() * 4 + 's'
-      blob.style.animationDelay = -(Math.random() * 7) + 's'
-      blob.style.animationDirection = Math.random() > 0.5 ? 'alternate' : 'alternate-reverse'
-      blob.style.setProperty('--tx-a', `${-45 + Math.random() * 90}vw`)
-      blob.style.setProperty('--ty-a', `${-45 + Math.random() * 90}vh`)
-      blob.style.setProperty('--tx-b', `${-45 + Math.random() * 90}vw`)
-      blob.style.setProperty('--ty-b', `${-45 + Math.random() * 90}vh`)
-      blob.style.setProperty('--tx-c', `${-45 + Math.random() * 90}vw`)
-      blob.style.setProperty('--ty-c', `${-45 + Math.random() * 90}vh`)
-      blob.style.setProperty('--blob-scale', `${0.85 + Math.random() * 0.65}`)
-      ambientContainer.appendChild(blob)
-      blobs.push(blob)
+    const allBlobs: HTMLDivElement[] = []
+    
+    containers.forEach((container) => {
+      colors.forEach((color, index) => {
+        const blob = document.createElement('div')
+        blob.className = 'blob'
+        blob.style.background = color
+        blob.style.top = Math.random() * 100 + '%'
+        blob.style.left = Math.random() * 100 + '%'
+        blob.style.animationDuration = 5 + Math.random() * 4 + 's'
+        blob.style.animationDelay = -(Math.random() * 7) + 's'
+        blob.style.animationDirection = Math.random() > 0.5 ? 'alternate' : 'alternate-reverse'
+        blob.style.setProperty('--tx-a', `${-45 + Math.random() * 90}vw`)
+        blob.style.setProperty('--ty-a', `${-45 + Math.random() * 90}vh`)
+        blob.style.setProperty('--tx-b', `${-45 + Math.random() * 90}vw`)
+        blob.style.setProperty('--ty-b', `${-45 + Math.random() * 90}vh`)
+        blob.style.setProperty('--tx-c', `${-45 + Math.random() * 90}vw`)
+        blob.style.setProperty('--ty-c', `${-45 + Math.random() * 90}vh`)
+        blob.style.setProperty('--blob-scale', `${0.85 + Math.random() * 0.65}`)
+        container.appendChild(blob)
+        allBlobs.push(blob)
+      })
     })
 
     return () => {
-      blobs.forEach((blob) => blob.remove())
+      allBlobs.forEach((blob) => blob.remove())
     }
   }, [])
 
@@ -111,10 +120,23 @@ export default function HeroInteractive() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* VERSION MOBILE - Simple et statique avec fond animé */}
+      <div className="md:hidden relative w-full h-screen overflow-hidden rounded-b-3xl">
+        <div id="ambient-bg-mobile" className="absolute inset-0 overflow-hidden rounded-b-3xl" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
+          <h1 className="text-6xl font-black text-white text-center mb-6 leading-tight tracking-tight">
+            AGENCY BINARY
+          </h1>
+          <p className="text-xl text-white/90 text-center max-w-sm font-medium leading-relaxed">
+            Laissez votre inspiration parler, laissez-nous lui donner vie
+          </p>
+        </div>
+      </div>
+
+      {/* VERSION DESKTOP - Animation au scroll */}
       <div
         ref={containerRef}
-        className="relative w-full h-screen overflow-visible rounded-b-3xl"
+        className="hidden md:block relative w-full h-screen overflow-visible rounded-b-3xl"
         style={{ isolation: 'isolate' }}
       >
         <div id="ambient-bg" className="absolute inset-0 overflow-hidden rounded-b-3xl" />

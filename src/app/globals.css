@@ -302,7 +302,14 @@ html {
   background: radial-gradient(circle at 20% 20%, #000a2e 0%, #000418 45%, #00020d 100%);
 }
 
-#ambient-bg .blob {
+#ambient-bg-mobile {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #000a2e 0%, #000418 45%, #00020d 100%);
+}
+
+#ambient-bg .blob,
+#ambient-bg-mobile .blob {
   position: absolute;
   width: clamp(220px, 26vw, 420px);
   aspect-ratio: 1 / 1;

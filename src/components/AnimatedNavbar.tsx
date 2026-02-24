@@ -44,13 +44,19 @@ export default function AnimatedNavbar() {
 
   return (
     <>
-      {/* MOBILE Navbar - Rectangle plat collé en haut SANS animation */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 w-full z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl border-b border-gray-300/30 animate-slide-down will-change-transform">
+      {/* MOBILE Navbar - Détachée avec bords arrondis */}
+      <nav className="md:hidden fixed top-4 left-4 right-4 z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30 animate-slide-down will-change-transform">
         <div className="px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <Link href="/" onClick={handleLogoClick} aria-label="Accueil" className="flex items-center hover:scale-110 transition-transform duration-300 will-change-transform">
-                <span className="text-2xl font-black text-gray-900">AGENCY BINARY</span>
+                <Image
+                  src="/images/logo.png"
+                  alt="Agency Binary Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </Link>
             </div>
             
@@ -67,17 +73,33 @@ export default function AnimatedNavbar() {
         </div>
 
         {isOpen && (
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 animate-slide-down">
-            <Link href="/#hero" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
+          <div className="px-2 pt-1 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 rounded-b-2xl animate-slide-down">
+            <Link 
+              href="/#hero" 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-sm font-bold transition-colors drop-shadow-sm"
+            >
               Accueil
             </Link>
-            <Link href="/#services" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
+            <Link 
+              href="/#services" 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-sm font-bold transition-colors drop-shadow-sm"
+            >
               Services
             </Link>
-            <Link href="/#offres" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
+            <Link 
+              href="/#offres" 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-sm font-bold transition-colors drop-shadow-sm"
+            >
               Offres
             </Link>
-            <Link href="/#contact" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
+            <Link 
+              href="/#contact" 
+              onClick={() => setIsOpen(false)}
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-sm font-bold transition-colors drop-shadow-sm"
+            >
               Contact
             </Link>
           </div>

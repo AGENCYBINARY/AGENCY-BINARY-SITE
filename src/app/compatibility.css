@@ -32,7 +32,8 @@
   transform: none !important;
 }
 
-.no-3d-transforms #ambient-bg .blob {
+.no-3d-transforms #ambient-bg .blob,
+.no-3d-transforms #ambient-bg-mobile .blob {
   animation-name: ambientBlobFloatFallback !important;
 }
 
@@ -49,7 +50,8 @@
 }
 
 /* Quand mix-blend-mode n'est pas supporté */
-.no-mix-blend-mode #ambient-bg .blob {
+.no-mix-blend-mode #ambient-bg .blob,
+.no-mix-blend-mode #ambient-bg-mobile .blob {
   mix-blend-mode: normal !important;
   opacity: 0.3 !important;
 }
