@@ -2,19 +2,26 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      {/* Mobile Navbar - Rectangle plat en haut */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 w-full z-50 bg-red-500/90 backdrop-blur-md shadow-2xl border-b-4 border-yellow-400">
+      {/* Mobile Navbar - Détachée avec bords arrondis */}
+      <nav className="md:hidden fixed top-4 left-4 right-4 z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30">
         <div className="px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <span className="text-2xl font-black text-gray-900">AGENCY BINARY</span>
+                <Image
+                  src="/images/logo.png"
+                  alt="Agency Binary Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </Link>
             </div>
             
@@ -34,7 +41,7 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 rounded-b-2xl">
             <Link href="#hero" className="text-gray-900 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-bold transition-colors drop-shadow-sm">
               Accueil
             </Link>
@@ -60,7 +67,13 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <span className="text-2xl font-black text-gray-900">AGENCY BINARY</span>
+                <Image
+                  src="/images/logo.png"
+                  alt="Agency Binary Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 w-auto"
+                />
               </Link>
             </div>
             
