@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/gain-temps`,
+      url: `${baseUrl}/optimisation-processus-digitaux`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

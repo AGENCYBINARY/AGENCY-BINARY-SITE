@@ -18,35 +18,35 @@ export default function Services() {
 
         {/* Grille des trois nouveaux services - Mono colonne sur mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {/* Service 1: GAIN DE TEMPS */}
+          {/* Service 1: OPTIMISATION DES PROCESSUS DIGITAUX */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/40 to-purple-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
             <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-6 hover:border-indigo-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Gain de Temps</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Optimisation des Processus Digitaux</h3>
               <p className="text-gray-600 mb-4 text-sm">
-                Traitement automatisé des demandes pour libérer votre équipe des tâches répétitives
+                Pôle ingénierie et conseil pour optimiser vos outils existants et créer des solutions SaaS IA sur mesure
               </p>
               <ul className="space-y-2 mb-4 text-sm">
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-3">✓</span>
-                  <span className="text-gray-600">Centralisation des demandes</span>
+                  <span className="text-gray-600">Audit et mise à niveau</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-3">✓</span>
-                  <span className="text-gray-600">Réponse automatique immédiate</span>
+                  <span className="text-gray-600">Modernisation technique</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-3">✓</span>
-                  <span className="text-gray-600">Relances systématiques</span>
+                  <span className="text-gray-600">SaaS IA personnalisé</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-3">✓</span>
-                  <span className="text-gray-600">Détection des priorités</span>
+                  <span className="text-gray-600">ERP & CRM propriétaire</span>
                 </li>
               </ul>
               <Link
-                href="/gain-temps"
+                href="/optimisation-processus-digitaux"
                 className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
                 style={{backgroundColor: '#5170ff'}}
               >
