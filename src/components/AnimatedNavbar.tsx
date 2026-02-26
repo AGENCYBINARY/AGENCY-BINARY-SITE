@@ -44,25 +44,23 @@ export default function AnimatedNavbar() {
 
   return (
     <>
-      {/* MOBILE Navbar - Détachée avec bords arrondis et compatible mobile */}
-      <nav className="md:hidden fixed top-safe left-4 right-4 z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30 animate-slide-down will-change-transform safe-area-inset-top">
+      {/* MOBILE Navbar - Détachée avec bords arrondis */}
+      <nav className="md:hidden fixed top-4 left-4 right-4 z-50 bg-gray-200/30 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-300/30">
         <div className="px-4 sm:px-6">
-          <div className="flex justify-between items-center h-14 sm:h-16">
-            <div className="flex-shrink-0">
-              <Link href="/" onClick={handleLogoClick} aria-label="Accueil" className="flex items-center hover:scale-110 transition-transform duration-300 will-change-transform min-h-11 min-w-11 flex items-center justify-center rounded">
-                <Image
-                  src="/images/logo.png"
-                  alt="Agency Binary Logo"
-                  width={40}
-                  height={40}
-                  className="h-10 w-auto"
-                />
-              </Link>
-            </div>
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" onClick={handleLogoClick} aria-label="Accueil" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="Agency Binary Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
             
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-3 rounded-md text-gray-900 hover:text-primary-600 hover:bg-white/10 focus:outline-none drop-shadow-sm transition-colors duration-300 min-h-12 min-w-12"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-primary-600 hover:bg-white/10 focus:outline-none transition-colors"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -74,32 +72,32 @@ export default function AnimatedNavbar() {
         </div>
 
         {isOpen && (
-          <div className="px-3 pt-1 pb-3 space-y-1 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 rounded-b-2xl animate-slide-down">
+          <div className="px-3 pt-2 pb-3 space-y-1 bg-gray-200/40 backdrop-blur-md border-t border-gray-300/30 rounded-b-2xl">
             <Link 
               href="/#hero" 
               onClick={() => setIsOpen(false)}
-              className="text-gray-900 hover:bg-white/20 block px-3 py-3 rounded-lg text-base font-bold transition-colors drop-shadow-sm min-h-12 flex items-center"
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
             >
               Accueil
             </Link>
             <Link 
               href="/#services" 
               onClick={() => setIsOpen(false)}
-              className="text-gray-900 hover:bg-white/20 block px-3 py-3 rounded-lg text-base font-bold transition-colors drop-shadow-sm min-h-12 flex items-center"
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
             >
               Services
             </Link>
             <Link 
               href="/#offres" 
               onClick={() => setIsOpen(false)}
-              className="text-gray-900 hover:bg-white/20 block px-3 py-3 rounded-lg text-base font-bold transition-colors drop-shadow-sm min-h-12 flex items-center"
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
             >
               Offres
             </Link>
             <Link 
               href="/#contact" 
               onClick={() => setIsOpen(false)}
-              className="text-gray-900 hover:bg-white/20 block px-3 py-3 rounded-lg text-base font-bold transition-colors drop-shadow-sm min-h-12 flex items-center"
+              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
             >
               Contact
             </Link>
