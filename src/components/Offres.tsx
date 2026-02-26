@@ -37,14 +37,14 @@ export default function Offres() {
         </div>
 
         {/* Onglets */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-2 border border-gray-300/40">
-            <div className="flex space-x-2">
+        <div className="flex justify-center mb-8 px-2">
+          <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-1 sm:p-2 border border-gray-300/40 w-full sm:w-auto">
+            <div className="flex space-x-1 sm:space-x-2">
               {tabs.map((tab, index) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 animate-swell ${
+                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 animate-swell flex-1 sm:flex-none min-h-10 ${
                     activeTab === tab.id
                       ? 'text-white shadow-lg'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 hover:scale-110'

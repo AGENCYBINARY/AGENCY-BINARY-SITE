@@ -1,0 +1,56 @@
+{
+  "name": "AGENCY BINARY",
+  "short_name": "Agency Binary",
+  "description": "Agence digitale créant des agents IA virtuels et des sites internet personnalisés",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#2d89ef",
+  "categories": ["business", "technology"],
+  "screenshots": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "platform": "wide",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "platform": "narrow",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Accueil",
+      "short_name": "Accueil",
+      "description": "Aller à la page d'accueil",
+      "url": "/?utm_source=pwa_shortcut",
+      "icons": [{ "src": "/images/logo.png", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/?utm_source=share",
+    "method": "POST",
+    "enctype": "multipart/form-data"
+  }
+}

@@ -120,14 +120,14 @@ export default function HeroInteractive() {
 
   return (
     <>
-      {/* VERSION MOBILE - Simple et statique avec fond animé */}
-      <div className="md:hidden relative w-full h-screen overflow-hidden rounded-b-3xl">
+      {/* VERSION MOBILE - Simple et statique avec fond animé et compatible mobile */}
+      <div className="md:hidden relative w-full h-screen overflow-hidden rounded-b-3xl safe-area-inset">
         <div id="ambient-bg-mobile" className="absolute inset-0 overflow-hidden rounded-b-3xl" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
-          <h1 className="text-6xl font-black text-white text-center mb-6 leading-tight tracking-tight">
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 pt-24 safe-area-inset-top">
+          <h1 className="text-5xl sm:text-6xl font-black text-white text-center mb-4 sm:mb-6 leading-tight tracking-tight">
             AGENCY BINARY
           </h1>
-          <p className="text-xl text-white/90 text-center max-w-sm font-medium leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/90 text-center max-w-xs sm:max-w-sm font-medium leading-relaxed">
             Laissez votre inspiration parler, laissez-nous lui donner vie
           </p>
         </div>

@@ -8,16 +8,16 @@ export default function Services() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/10 to-purple-50/10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate-fade-in">
             Nos Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up animate-stagger-1">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up animate-stagger-1">
             Transformez votre entreprise avec nos solutions digitales innovantes
           </p>
         </div>
 
-        {/* Grille des trois nouveaux services */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {/* Grille des trois nouveaux services - Mono colonne sur mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {/* Service 1: GAIN DE TEMPS */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
