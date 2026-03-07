@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react'
 import HeroInteractive from '@/components/HeroInteractive'
+import MissionSection from '@/components/MissionSection'
 import Services from '@/components/Services'
-import Offres from '@/components/Offres'
 import Contact from '@/components/Contact'
 import AnimatedNavbar from '@/components/AnimatedNavbar'
 import Footer from '@/components/Footer'
@@ -31,8 +31,8 @@ export default function Home() {
     <main className="min-h-screen">
       <AnimatedNavbar />
       <HeroInteractive />
+      <MissionSection />
       <Services />
-      <Offres />
       <Contact />
       <Footer />
     </main>

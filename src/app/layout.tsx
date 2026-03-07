@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import './compatibility.css'
 import BrowserCompatInit from '@/components/BrowserCompatInit'
+import MaintenancePage from '@/components/MaintenancePage'
 
 const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['700', '800'] })
@@ -68,25 +69,33 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/icon.png" type="image/png" />
         
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.ABL_WIDGET_CONFIG = {
-                apiKey: '',
-                apiEndpoint: '/api/chat',
-                model: 'gpt-4o-mini',
-                brandName: 'Agency Build Lab',
-                brandShort: 'ABL',
-                showWelcome: true
-              };
-            `,
-          }}
-        />
-        <script src="/widget.js" defer />
+        {process.env.NEXT_PUBLIC_MAINTENANCE !== 'true' && (
+          <>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.ABL_WIDGET_CONFIG = {
+                    apiKey: '',
+                    apiEndpoint: '/api/chat',
+                    model: 'gpt-4o-mini',
+                    brandName: 'Agency Build Lab',
+                    brandShort: 'ABL',
+                    showWelcome: true
+                  };
+                `,
+              }}
+            />
+            <script src="/widget.js" defer />
+          </>
+        )}
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <BrowserCompatInit />
-        {children}
+        {process.env.NEXT_PUBLIC_MAINTENANCE === 'true' ? (
+          <MaintenancePage />
+        ) : (
+          children
+        )}
       </body>
     </html>
   )

@@ -88,13 +88,6 @@ export default function AnimatedNavbar() {
               Services
             </Link>
             <Link 
-              href="/#offres" 
-              onClick={() => setIsOpen(false)}
-              className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
-            >
-              Offres
-            </Link>
-            <Link 
               href="/#contact" 
               onClick={() => setIsOpen(false)}
               className="text-gray-900 hover:bg-white/20 block px-3 py-2 rounded-lg text-base font-bold transition-colors text-left"
@@ -152,11 +145,6 @@ export default function AnimatedNavbar() {
               </Link>
               <Link href="/#services" className="relative text-gray-900 px-4 py-2 text-sm font-bold group">
                 <span className="relative z-10">Services</span>
-                <span className="absolute inset-0 bg-white/40 backdrop-blur-xl rounded-full scale-30 group-hover:scale-[1.15] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out shadow-lg group-hover:duration-300"></span>
-                <span className="absolute inset-0 border border-white/60 rounded-full scale-30 group-hover:scale-[1.15] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:duration-300"></span>
-              </Link>
-              <Link href="/#offres" className="relative text-gray-900 px-4 py-2 text-sm font-bold group">
-                <span className="relative z-10">Offres</span>
                 <span className="absolute inset-0 bg-white/40 backdrop-blur-xl rounded-full scale-30 group-hover:scale-[1.15] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out shadow-lg group-hover:duration-300"></span>
                 <span className="absolute inset-0 border border-white/60 rounded-full scale-30 group-hover:scale-[1.15] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out group-hover:duration-300"></span>
               </Link>

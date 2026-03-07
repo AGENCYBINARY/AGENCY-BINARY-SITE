@@ -16,13 +16,13 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Grille des trois nouveaux services - Mono colonne sur mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Grille des quatre services - Mono colonne sur mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
           {/* Service 1: OPTIMISATION DES PROCESSUS DIGITAUX */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/40 to-purple-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-6 hover:border-indigo-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative flex h-full flex-col rounded-2xl border border-gray-300/40 bg-white/60 p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-indigo-400/60 hover:shadow-2xl hover:shadow-indigo-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(99, 102, 241, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Optimisation des Processus Digitaux</h3>
               <p className="text-gray-600 mb-4 text-sm">
                 Pôle ingénierie et conseil pour optimiser vos outils existants et créer des solutions SaaS IA sur mesure
@@ -47,7 +47,7 @@ export default function Services() {
               </ul>
               <Link
                 href="/optimisation-processus-digitaux"
-                className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                className="mt-auto inline-block rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
                 style={{backgroundColor: '#5170ff'}}
               >
                 En savoir plus →
@@ -59,7 +59,7 @@ export default function Services() {
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-pink-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-6 hover:border-purple-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(168, 85, 247, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative flex h-full flex-col rounded-2xl border border-gray-300/40 bg-white/60 p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-purple-400/60 hover:shadow-2xl hover:shadow-purple-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(168, 85, 247, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Assistant IA</h3>
               <p className="text-gray-600 mb-4 text-sm">
                 Assistant métier et administratif interne pour simplifier votre quotidien
@@ -84,7 +84,7 @@ export default function Services() {
               </ul>
               <Link
                 href="/assistant-ia"
-                className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                className="mt-auto inline-block rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
                 style={{backgroundColor: '#5170ff'}}
               >
                 En savoir plus →
@@ -96,7 +96,7 @@ export default function Services() {
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500/40 to-rose-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl border border-gray-300/40 p-6 hover:border-pink-400/60 transition-all duration-300 h-full hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(236, 72, 153, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+            <div className="relative flex h-full flex-col rounded-2xl border border-gray-300/40 bg-white/60 p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-pink-400/60 hover:shadow-2xl hover:shadow-pink-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(236, 72, 153, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
               <h3 className="text-xl font-bold text-gray-900 mb-3">WebDesign</h3>
               <p className="text-gray-600 mb-4 text-sm">
                 Interfaces connectées au système pour une expérience utilisateur optimale
@@ -121,7 +121,44 @@ export default function Services() {
               </ul>
               <Link
                 href="/webdesign"
-                className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+                className="mt-auto inline-block rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
+                style={{backgroundColor: '#5170ff'}}
+              >
+                En savoir plus →
+              </Link>
+            </div>
+          </div>
+
+          {/* Service 4: DEVELOPPEMENT LINKEDIN */}
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-violet-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 to-violet-500/40 rounded-2xl blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-300 -z-10"></div>
+            <div className="relative flex h-full flex-col rounded-2xl border border-gray-300/40 bg-white/60 p-6 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-blue-400/60 hover:shadow-2xl hover:shadow-blue-500/20 will-change-transform" style={{boxShadow: '0 20px 40px rgba(59, 130, 246, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1)'}}>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Développement LinkedIn</h3>
+              <p className="text-gray-600 mb-4 text-sm">
+                Positionnement expert B2B pour structurer votre autorité et convertir votre présence LinkedIn en levier business
+              </p>
+              <ul className="space-y-2 mb-4 text-sm">
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Refonte stratégique du profil</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Ligne éditoriale orientée autorité</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Développement de réseau qualifié</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Pilotage des indicateurs d'engagement</span>
+                </li>
+              </ul>
+              <Link
+                href="/developpement-linkedin"
+                className="mt-auto inline-block rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
                 style={{backgroundColor: '#5170ff'}}
               >
                 En savoir plus →
