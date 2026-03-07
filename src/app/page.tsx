@@ -7,25 +7,27 @@ import Services from '@/components/Services'
 import Contact from '@/components/Contact'
 import AnimatedNavbar from '@/components/AnimatedNavbar'
 import Footer from '@/components/Footer'
+import MaintenancePage from '@/components/MaintenancePage'
 
 export default function Home() {
   useEffect(() => {
-    // Gérer le scroll vers l'ancre après le chargement de la page
     if (window.location.hash) {
       const id = window.location.hash.substring(1)
       setTimeout(() => {
         const element = document.getElementById(id)
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' })
-          // Supprimer le hash de l'URL après le scroll
           window.history.replaceState(null, '', window.location.pathname)
         }
       }, 100)
     } else {
-      // Si pas de hash, s'assurer qu'on est en haut de la page (après un refresh)
       window.scrollTo({ top: 0, behavior: 'auto' })
     }
   }, [])
+
+  if (process.env.NEXT_PUBLIC_MAINTENANCE === 'true') {
+    return <MaintenancePage />
+  }
 
   return (
     <main className="min-h-screen">
@@ -38,4 +40,3 @@ export default function Home() {
     </main>
   )
 }
-
